@@ -4,10 +4,10 @@ import Logo from '../Logo/Logo';
 
 const Footer = () => {
   return (
-    <footer className="bg-base-200/50 border-t border-base-300 pt-16 pb-8">
+    <footer className="bg-base-200/50 border-t border-base-150 pt-16 pb-8">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Column 1: Brand & About */}
+          {/* Brand & About */}
           <div className="space-y-6">
             <Logo />
             <p className="text-base-content/70 leading-relaxed max-w-xs">
@@ -23,7 +23,6 @@ const Footer = () => {
                   className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300"
                 >
                   <i className={`fab fa-${social}`}></i>{' '}
-                  {/* FontAwesome icons use korle eta kaj korbe */}
                   <span className="sr-only uppercase text-[10px]">
                     {social[0]}
                   </span>
@@ -32,7 +31,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Quick Links */}
           <div>
             <h4 className="font-black uppercase tracking-widest text-sm mb-6 text-primary">
               Explore
@@ -73,7 +72,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Support & Policies */}
+          {/* Support & Policies */}
           <div>
             <h4 className="font-black uppercase tracking-widest text-sm mb-6 text-primary">
               Support
@@ -114,7 +113,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4: Newsletter */}
+          {/* Newsletter */}
           <div className="space-y-6">
             <h4 className="font-black uppercase tracking-widest text-sm text-primary">
               Newsletter
@@ -136,10 +135,10 @@ const Footer = () => {
         </div>
 
         {/* Divider & Copyright */}
-        <div className="border-t border-base-300/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-base-150 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm font-bold opacity-40">
-            ©{new Date().getFullYear()} <span className="text-primary">O-EXAM</span>. All rights
-            reserved.
+            ©{new Date().getFullYear()}{' '}
+            <span className="text-primary">O-EXAM</span>. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs font-black uppercase tracking-[0.2em] opacity-40">
             <span className="hover:opacity-100 cursor-pointer">Security</span>
