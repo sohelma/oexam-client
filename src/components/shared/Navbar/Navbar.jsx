@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <div className="flex bg-base-100/70 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] w-full justify-center sticky top-0 z-50 pt-2 px-2 md:px-0">
-      <div className="navbar max-w-7xl px-4 md:px-15 min-h-[70px]">
+      <div className="navbar max-w-7xl px-3 md:px-15 min-h-[70px]">
         <div className="navbar-start">
           {/* Mobile Menu */}
           <div className="dropdown">
