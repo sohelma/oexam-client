@@ -16,16 +16,35 @@ const Footer = () => {
             </p>
             {/* Social Links */}
             <div className="flex gap-4">
-              {['facebook', 'twitter', 'linkedin', 'github'].map(social => (
+              {[
+                {
+                  src: 'https://i.ibb.co.com/2Y3TZf9V/icons8-facebook-logo-50.png',
+                  label: 'Facebook',
+                },
+                {
+                  src: 'https://i.ibb.co.com/ymQnmB7d/icons8-instagram-logo-50.png',
+                  label: 'Instagram',
+                },
+                {
+                  src: 'https://i.ibb.co.com/4Z8dRSc4/icons8-x-logo-50.png',
+                  label: 'X',
+                },
+                {
+                  src: 'https://i.ibb.co.com/dwxcgxvr/icons8-youtube-50.png',
+                  label: 'Youtube',
+                },
+              ].map((social, index) => (
                 <a
-                  key={social}
-                  href={`#${social}`}
-                  className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300"
+                  key={index}
+                  href="#"
+                  className="w-11 h-11 rounded-2xl bg-primary/10 flex items-center justify-center group hover:bg-primary transition-all duration-500 shadow-sm hover:shadow-primary/40 hover:-translate-y-1"
                 >
-                  <i className={`fab fa-${social}`}></i>{' '}
-                  <span className="sr-only uppercase text-[10px]">
-                    {social[0]}
-                  </span>
+                  <img
+                    src={social.src}
+                    alt={social.label}
+                    className="w-6 h-6 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-500"
+                  />
+                  <span className="sr-only">{social.label}</span>
                 </a>
               ))}
             </div>
