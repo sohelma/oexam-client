@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
@@ -8,14 +8,22 @@ import { FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
 export default function LoginPage() {
   const [role, setRole] = useState("student");
   const [show, setShow] = useState(false);
+  const [balls, setBalls] = useState([]);
 
-  const balls = Array.from({ length: 12 });
+  // generate random positions ONLY on client
+  useEffect(() => {
+    const generated = Array.from({ length: 12 }).map(() => ({
+      top: Math.random() * 100,
+      left: Math.random() * 100,
+    }));
+    setBalls(generated);
+  }, []);
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-[#020617] overflow-hidden px-4">
 
       {/* 🔵 Blue bouncing balls */}
-      {balls.map((_, i) => (
+      {balls.map((ball, i) => (
         <motion.span
           key={i}
           animate={{ y: [0, -20, 0] }}
@@ -26,8 +34,8 @@ export default function LoginPage() {
           }}
           className="absolute w-2 h-2 bg-cyan-400/60"
           style={{
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
+            top: `${ball.top}%`,
+            left: `${ball.left}%`,
           }}
         />
       ))}
@@ -39,7 +47,6 @@ export default function LoginPage() {
         transition={{ duration: 0.25 }}
         className="relative w-full max-w-sm border border-slate-800 bg-[#0f172a] p-8 shadow-2xl"
       >
-        {/* Title */}
         <h1 className="text-lg font-semibold text-white">
           Exam System Login
         </h1>
@@ -53,18 +60,16 @@ export default function LoginPage() {
             <button
               key={r}
               onClick={() => setRole(r)}
-              className={`flex-1 py-2 text-xs uppercase transition ${
-                role === r
+              className={`flex-1 py-2 text-xs uppercase transition ${role === r
                   ? "bg-cyan-400 text-black"
                   : "text-slate-400 hover:bg-slate-800"
-              }`}
+                }`}
             >
               {r}
             </button>
           ))}
         </div>
 
-        {/* Animated form */}
         <AnimatePresence mode="wait">
           <motion.form
             key={role}
@@ -129,13 +134,11 @@ export default function LoginPage() {
           </motion.form>
         </AnimatePresence>
 
-        {/* Divider */}
         <div className="h-px bg-slate-800 my-6" />
 
-        {/* Signup */}
         <p className="text-[11px] text-slate-400 text-center">
           Need an account?{" "}
-          <Link href="/register" className="text-cyan-400 underline">
+          <Link href="/auth/registration" className="text-cyan-400 underline">
             Register
           </Link>
         </p>
