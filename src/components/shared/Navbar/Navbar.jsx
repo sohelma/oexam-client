@@ -1,17 +1,17 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import Logo from '../Logo/Logo';
+import Image from "next/image";
+import Link from "next/link";
+import Logo from "../Logo/Logo";
 
 const Navbar = () => {
   const user = {
-    name: 'Habiba Sultana',
-    role: 'student',
-    image: 'https://i.ibb.co.com/MxSXSPf3/kids.jpg',
+    name: "Habiba Sultana",
+    role: "student",
+    image: "https://i.ibb.co.com/MxSXSPf3/kids.jpg",
   };
 
   return (
     <div className="flex bg-base-100/70 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] w-full justify-center sticky top-0 z-50 pt-2 px-2 md:px-0">
-      <div className="navbar max-w-7xl px-4 md:px-10 min-h-[70px]">
+      <div className="navbar max-w-7xl px-4 md:px-15 min-h-[70px]">
         <div className="navbar-start">
           {/* Mobile Menu */}
           <div className="dropdown">
@@ -50,11 +50,11 @@ const Navbar = () => {
 
               <div className="space-y-1">
                 {[
-                  { name: 'Exams', href: '/exams', icon: '📝' },
-                  { name: 'Results', href: '/results', icon: '🏆' },
-                  { name: 'Notice', href: '/notice', icon: '📢' },
-                  { name: 'About', href: '/about', icon: '✨' },
-                ].map(item => (
+                  { name: "Exams", href: "/exams", icon: "📝" },
+                  { name: "Results", href: "/results", icon: "🏆" },
+                  { name: "Notice", href: "/notice", icon: "📢" },
+                  { name: "About", href: "/about", icon: "✨" },
+                ].map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
@@ -71,7 +71,7 @@ const Navbar = () => {
                 ))}
 
                 {/* Conditional Question Bank for Teacher/Admin */}
-                {(user.role === 'teacher' || user.role === 'admin') && (
+                {(user.role === "teacher" || user.role === "admin") && (
                   <>
                     <div className="divider opacity-30 my-1"></div>
                     <li>
@@ -105,7 +105,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal gap-6 px-1">
             <li>
               <Link
-                href={'/'}
+                href={"/"}
                 className="relative px-3 py-2 font-semibold text-base-content/80 group transition-colors duration-300 hover:text-primary !bg-transparent !outline-none border-none"
               >
                 Exams
@@ -114,7 +114,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                href={'/results'}
+                href={"/results"}
                 className="relative px-3 py-2 font-semibold text-base-content/80 group transition-colors duration-300 hover:text-primary !bg-transparent !outline-none border-none"
               >
                 Results
@@ -144,7 +144,7 @@ const Navbar = () => {
             </li>
 
             {/* for teachers and admin*/}
-            {(user.role === 'teacher' || user.role === 'admin') && (
+            {(user.role === "teacher" || user.role === "admin") && (
               <li>
                 <Link
                   href="/manage-questions"
@@ -213,7 +213,7 @@ const Navbar = () => {
 
               {/* Menu Items */}
               <div className="px-2 space-y-1">
-                {user.role === 'student' && (
+                {user.role === "student" && (
                   <>
                     <li>
                       <Link
@@ -240,7 +240,7 @@ const Navbar = () => {
                   </>
                 )}
 
-                {user.role === 'teacher' && (
+                {user.role === "teacher" && (
                   <>
                     <li>
                       <Link
@@ -267,7 +267,7 @@ const Navbar = () => {
                   </>
                 )}
 
-                {user.role === 'admin' && (
+                {user.role === "admin" && (
                   <>
                     <li>
                       <Link
@@ -356,10 +356,10 @@ const Navbar = () => {
 
           {/* Action Button */}
           <Link
-            href={user.role === 'student' ? '/exams' : '/create-exam'}
+            href={user.role === "student" ? "/exams" : "/create-exam"}
             className="btn btn-primary rounded-2xl px-7 hidden md:flex font-bold text-white shadow-xl shadow-primary/20 border-none hover:translate-y-[-2px] hover:shadow-primary/40 active:scale-95 transition-all duration-300"
           >
-            {user.role === 'student' ? 'Start Exam' : 'Quick Action'}
+            {user.role === "student" ? "Start Exam" : "Quick Action"}
           </Link>
         </div>
       </div>
