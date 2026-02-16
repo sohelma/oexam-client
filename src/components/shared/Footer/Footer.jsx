@@ -138,7 +138,7 @@ const Footer = () => {
         {/* Divider & Copyright */}
         <div className="border-t border-base-300/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm font-bold opacity-40">
-            © 2026 <span className="text-primary">O-EXAM</span>. All rights
+            ©{new Date().getFullYear()} <span className="text-primary">O-EXAM</span>. All rights
             reserved.
           </p>
           <div className="flex gap-6 text-xs font-black uppercase tracking-[0.2em] opacity-40">
