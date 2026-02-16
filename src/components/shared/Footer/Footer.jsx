@@ -125,9 +125,9 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Email Address"
-                className="input input-bordered w-full rounded-2xl bg-base-100/50 focus:border-primary border-base-300"
+                className="input input-primary w-full rounded-2xl bg-base-100/50 focus:border-primary"
               />
-              <button className="btn btn-primary btn-sm absolute right-1.5 top-1.5 rounded-xl px-4">
+              <button className="btn btn-primary btn-sm absolute right-1.5 top-2 rounded-xl px-4">
                 Join
               </button>
             </div>
