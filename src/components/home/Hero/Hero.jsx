@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <div>
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-base-100">
+      <section className="relative flex items-center bg-base-100 md:my-40 my-20">
         {/* Background Decoration */}
         <div className="absolute top-0 right-0 -z-10 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full"></div>
 
@@ -23,7 +23,7 @@ const Hero = () => {
               <button className="btn btn-primary btn-lg rounded-2xl shadow-xl shadow-primary/20 px-8 font-black uppercase">
                 Get Started
               </button>
-              <button className="btn btn-ghost btn-lg rounded-2xl border-base-300 px-8 font-black uppercase italic">
+              <button className="btn btn-outline btn-primary btn-lg rounded-2xl px-8 font-black uppercase italic">
                 Watch Demo
               </button>
             </div>
