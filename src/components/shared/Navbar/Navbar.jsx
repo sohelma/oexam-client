@@ -6,7 +6,7 @@ const Navbar = () => {
   const user = {
     name: 'Habiba Sultana',
     role: 'student',
-    image: 'https://ui-avatars.com/api/?name=Habiba+Sultana&background=random',
+    image: 'https://i.ibb.co.com/MxSXSPf3/kids.jpg',
   };
 
   const navOptions = (

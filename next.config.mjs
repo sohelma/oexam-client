@@ -7,6 +7,10 @@ const nextConfig = {
         hostname: 'ui-avatars.com',
         pathname: '/api/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'i.ibb.co.com',
+      },
     ],
   },
 };
