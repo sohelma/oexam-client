@@ -5,7 +5,7 @@ const Hero = () => {
         {/* Background Decoration */}
         <div className="absolute top-0 right-0 -z-10 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full"></div>
 
-        <div className="max-w-[80%] mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[98%] md:max-w-[80%] mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
             <div className="badge badge-outline badge-primary font-bold py-4 px-6 rounded-full animate-bounce">
@@ -20,10 +20,10 @@ const Hero = () => {
               real-time tracking, instant results, and expert-curated questions.
             </p>
             <div className="flex gap-4">
-              <button className="btn btn-primary btn-lg rounded-2xl shadow-xl shadow-primary/20 px-8 font-black uppercase">
+              <button className="btn btn-primary md:btn-lg rounded-2xl shadow-xl shadow-primary/20 px-8 font-black uppercase">
                 Get Started
               </button>
-              <button className="btn btn-outline btn-primary btn-lg rounded-2xl px-8 font-black uppercase italic">
+              <button className="btn btn-outline btn-primary md:btn-lg rounded-2xl px-8 font-black uppercase italic">
                 Watch Demo
               </button>
             </div>

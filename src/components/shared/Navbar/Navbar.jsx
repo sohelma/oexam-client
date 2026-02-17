@@ -23,7 +23,7 @@ const Navbar = () => {
           <div className="dropdown">
             <label
               tabIndex={0}
-              className="btn btn-ghost lg:hidden p-2 mr-3 hover:bg-primary/10 rounded-xl transition-all duration-300"
+              className="btn btn-ghost lg:hidden p-2 hover:bg-primary/10 rounded-xl transition-all duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
