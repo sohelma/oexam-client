@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <div className="flex bg-base-100/70 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] w-full justify-center sticky top-0 z-50 pt-2">
-      <div className="navbar max-w-[80%] min-h-[70px]">
+      <div className="navbar max-w-[98%] md:max-w-[80%] min-h-[70px]">
         <div className="navbar-start">
           <div className="dropdown">
             <label
@@ -93,7 +93,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="navbar-end gap-3">
+        <div className="navbar-end gap-1 md:gap-3">
           {/* Notification */}
           <button className="btn btn-ghost btn-circle relative group hover:bg-primary/10 transition-all duration-500">
             <div className="indicator">
@@ -219,7 +219,7 @@ const Navbar = () => {
 
           <Link
             href={user ? `/dashboard/${user.role}` : '/login'}
-            className="btn btn-primary rounded-2xl px-8 hidden md:flex font-black text-white shadow-xl shadow-primary/20 border-none hover:translate-y-[-3px] hover:shadow-primary/40 active:scale-95 transition-all duration-500 uppercase tracking-tighter"
+            className="btn btn-primary text-xs md:text-md btn-sm md:btn-md rounded-xl md:rounded-2xl md:px-8 font-black text-white shadow-xl shadow-primary/20 border-none hover:translate-y-[-3px] hover:shadow-primary/40 active:scale-95 transition-all duration-500 uppercase tracking-tighter"
           >
             {user ? 'Dashboard' : 'Login'}
           </Link>
