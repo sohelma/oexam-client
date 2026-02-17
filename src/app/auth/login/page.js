@@ -21,7 +21,6 @@ export default function LoginPage() {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-[#020617] overflow-hidden px-4">
-
       {/* 🔵 Blue bouncing balls */}
       {balls.map((ball, i) => (
         <motion.span
@@ -47,9 +46,7 @@ export default function LoginPage() {
         transition={{ duration: 0.25 }}
         className="relative w-full max-w-sm border border-slate-800 bg-[#0f172a] p-8 shadow-2xl"
       >
-        <h1 className="text-lg font-semibold text-white">
-          Exam System Login
-        </h1>
+        <h1 className="text-lg font-semibold text-white">Exam System Login</h1>
         <p className="text-xs text-slate-400 mt-1 mb-6">
           Continue as student or teacher.
         </p>
@@ -60,10 +57,11 @@ export default function LoginPage() {
             <button
               key={r}
               onClick={() => setRole(r)}
-              className={`flex-1 py-2 text-xs uppercase transition ${role === r
+              className={`flex-1 py-2 text-xs uppercase transition ${
+                role === r
                   ? "bg-cyan-400 text-black"
                   : "text-slate-400 hover:bg-slate-800"
-                }`}
+              }`}
             >
               {r}
             </button>
@@ -140,6 +138,11 @@ export default function LoginPage() {
           Need an account?{" "}
           <Link href="/auth/registration" className="text-cyan-400 underline">
             Register
+          </Link>
+        </p>
+        <p className="text-[11px] text-slate-400 text-center">
+          <Link href="/" className="text-cyan-400 underline">
+            Get back to home
           </Link>
         </p>
       </motion.div>
