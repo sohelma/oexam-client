@@ -11,11 +11,11 @@ const Hero = () => {
             <div className="badge badge-outline badge-primary font-bold py-4 px-6 rounded-full animate-bounce">
               🚀 New: BCS Model Test 2026 is Live!
             </div>
-            <h1 className="text-6xl font-black leading-tight text-base-content uppercase tracking-tighter">
+            <h1 className="text-4xl md:text-6xl font-black leading-tight text-base-content uppercase tracking-tighter">
               O-EXAM: The Smartest{' '}
               <span className="text-primary">Evaluation</span> Tool
             </h1>
-            <p className="text-lg opacity-70 max-w-lg leading-relaxed">
+            <p className="text-sm md:text-lg opacity-70 max-w-lg leading-relaxed">
               Join thousands of students and prepare for your dreams with
               real-time tracking, instant results, and expert-curated questions.
             </p>
@@ -40,13 +40,13 @@ const Hero = () => {
             </div>
 
             {/* Floating Info Card */}
-            <div className="absolute -bottom-6 -left-6 z-20 bg-base-100 p-6 rounded-[2rem] shadow-2xl border border-base-100 animate-floating">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-green-500/10 text-green-500 rounded-2xl font-bold">
+            <div className="absolute -bottom-6 md:-left-6 z-20 bg-base-100 p-2 lg:p-6 rounded-xl lg:rounded-[2rem] shadow-2xl border border-base-100 animate-floating">
+              <div className="flex items-center gap-2">
+                <div className="p-3 px-4 bg-green-500/10 text-green-500 rounded-2xl font-bold">
                   ✓
                 </div>
                 <div>
-                  <p className="font-black text-xl leading-none">98.5%</p>
+                  <p className="font-black text-md lg:text-xl leading-none">98.5%</p>
                   <p className="text-xs opacity-50 uppercase font-bold tracking-widest mt-1">
                     Success Rate
                   </p>
