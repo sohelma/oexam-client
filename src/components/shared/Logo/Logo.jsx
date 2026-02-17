@@ -1,14 +1,10 @@
 import Link from 'next/link';
 
-const Logo = ({
-  className = '',
-  iconSize = 'w-7 h-7',
-  fontSize = 'text-2xl',
-}) => {
+const Logo = () => {
   return (
     <Link
       href="/"
-      className={`flex items-center gap-3 group transition-all duration-300 ${className}`}
+      className={`flex items-center gap-3 group transition-all duration-300`}
     >
       <div className="relative flex items-center justify-center">
         {/* Infinity Glowing Background */}
@@ -20,7 +16,7 @@ const Logo = ({
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className={`${iconSize} text-white`}
+            className={`text-white w-5 h-5 md:w-7 md:h-7`}
           >
             <path d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.94 49.94 0 00-9.945 2.577.75.75 0 01-.508 0 49.912 49.912 0 00-9.945-2.577.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z" />
             <path d="M13.06 15.473a48.45 48.45 0 017.623-2.662c.134.44.21.903.21 1.389 0 3.024-1.268 5.77-3.326 7.693a.75.75 0 01-1.012-.01 31.13 31.13 0 00-4.555-3.602a.75.75 0 01-.314-.611v-2.196z" />
@@ -30,20 +26,14 @@ const Logo = ({
       </div>
 
       <div className="flex flex-col">
-        <div className="flex items-center leading-none tracking-[0.05em]">
-          <span
-            className={`${fontSize} font-black text-base-content tracking-tighter`}
-          >
+        <div className="flex items-center leading-none tracking-[0.05em] md:text-2xl">
+          <span className={`font-black text-base-content tracking-tighter`}>
             O
           </span>
-          <span
-            className={`${fontSize} font-extrabold text-primary px-0.5 animate-pulse`}
-          >
+          <span className={`font-extrabold text-primary px-0.5 animate-pulse`}>
             -
           </span>
-          <span
-            className={`${fontSize} font-black text-base-content tracking-tighter`}
-          >
+          <span className={`font-black text-base-content tracking-tighter`}>
             EXAM
           </span>
         </div>
