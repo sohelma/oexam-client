@@ -3,3 +3,6 @@
 @tailwind utilities;
 @plugin "daisyui";
 
+body{
+  overflow-x: hidden !important;
+}
