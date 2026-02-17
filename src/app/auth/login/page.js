@@ -1,151 +1,117 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
 
 export default function LoginPage() {
   const [role, setRole] = useState("student");
   const [show, setShow] = useState(false);
-  const [balls, setBalls] = useState([]);
-
-  // generate random positions ONLY on client
-  useEffect(() => {
-    const generated = Array.from({ length: 12 }).map(() => ({
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-    }));
-    setBalls(generated);
-  }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-[#020617] overflow-hidden px-4">
-      {/* 🔵 Blue bouncing balls */}
-      {balls.map((ball, i) => (
-        <motion.span
-          key={i}
-          animate={{ y: [0, -20, 0] }}
-          transition={{
-            duration: 2 + i * 0.2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute w-2 h-2 bg-cyan-400/60"
-          style={{
-            top: `${ball.top}%`,
-            left: `${ball.left}%`,
-          }}
-        />
-      ))}
+    <div className="min-h-screen flex items-center justify-center bg-base-200 px-4">
+      <div className="card w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card-body">
+          <h2 className="card-title text-2xl font-bold text-center justify-center mb-2">
+            Welcome Back
+          </h2>
+          <p className="text-center text-sm text-base-content/70 mb-6">
+            Login to your account
+          </p>
 
-      {/* ⬛ Panel */}
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.25 }}
-        className="relative w-full max-w-sm border border-slate-800 bg-[#0f172a] p-8 shadow-2xl"
-      >
-        <h1 className="text-lg font-semibold text-white">Exam System Login</h1>
-        <p className="text-xs text-slate-400 mt-1 mb-6">
-          Continue as student or teacher.
-        </p>
-
-        {/* Role switch */}
-        <div className="flex border border-slate-700 mb-6">
-          {["student", "teacher"].map((r) => (
-            <button
-              key={r}
-              onClick={() => setRole(r)}
-              className={`flex-1 py-2 text-xs uppercase transition ${
-                role === r
-                  ? "bg-cyan-400 text-black"
-                  : "text-slate-400 hover:bg-slate-800"
-              }`}
+          {/* Role Switch */}
+          <div role="tablist" className="tabs tabs-boxed bg-base-200 p-1 mb-6">
+            <button 
+              role="tab"
+              className={`tab flex-1 ${role === 'student' ? 'tab-active' : ''}`}
+              onClick={() => setRole('student')}
             >
-              {r}
+              Student
             </button>
-          ))}
-        </div>
+            <button 
+              role="tab"
+              className={`tab flex-1 ${role === 'teacher' ? 'tab-active' : ''}`}
+              onClick={() => setRole('teacher')}
+            >
+              Teacher
+            </button>
+          </div>
 
-        <AnimatePresence mode="wait">
-          <motion.form
-            key={role}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.15 }}
-            className="space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert(`Login as ${role}`);
-            }}
-          >
-            {/* Email */}
-            <div className="relative">
-              <FiMail className="absolute left-3 top-3 text-slate-500" />
-              <input
-                type="email"
-                placeholder="Email address"
-                className="w-full border border-slate-700 bg-slate-950 pl-10 pr-3 py-2 text-sm text-white
-                           outline-none focus:border-cyan-400"
-              />
+          <form onSubmit={(e) => {
+            e.preventDefault();
+            alert(`Login as ${role}`);
+          }}>
+            {/* Email Input */}
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <div className="relative">
+                <FiMail className="absolute left-3 top-3.5 text-base-content/50" />
+                <input
+                  type="email"
+                  placeholder="email@example.com"
+                  className="input input-bordered w-full pl-10"
+                  required
+                />
+              </div>
             </div>
 
-            {/* Password */}
-            <div className="relative">
-              <FiLock className="absolute left-3 top-3 text-slate-500" />
-              <input
-                type={show ? "text" : "password"}
-                placeholder="Password"
-                className="w-full border border-slate-700 bg-slate-950 pl-10 pr-10 py-2 text-sm text-white
-                           outline-none focus:border-cyan-400"
-              />
+            {/* Password Input */}
+            <div className="form-control w-full mt-4">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <div className="relative">
+                <FiLock className="absolute left-3 top-3.5 text-base-content/50" />
+                <input
+                  type={show ? "text" : "password"}
+                  placeholder="Enter password"
+                  className="input input-bordered w-full pl-10 pr-10"
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={() => setShow(!show)}
+                  className="absolute right-3 top-3.5 text-base-content/50 hover:text-primary transition-colors"
+                >
+                  {show ? <FiEyeOff size={18} /> : <FiEye size={18} />}
+                </button>
+              </div>
+              <label className="label">
+                <Link 
+                  href="/forgot-password" 
+                  className="label-text-alt link link-hover text-primary ml-auto"
+                >
+                  Forgot password?
+                </Link>
+              </label>
+            </div>
 
-              <button
-                type="button"
-                onClick={() => setShow(!show)}
-                className="absolute right-3 top-2.5 text-slate-500 hover:text-cyan-400"
-              >
-                {show ? <FiEyeOff size={16} /> : <FiEye size={16} />}
+            {/* Submit Button */}
+            <div className="form-control mt-6">
+              <button className="btn btn-primary uppercase font-bold">
+                Login as {role}
               </button>
             </div>
+          </form>
 
-            {/* Forgot */}
-            <div className="flex justify-end">
-              <Link
-                href="/forgot-password"
-                className="text-[11px] text-slate-400 hover:text-cyan-400"
-              >
-                Forgot password?
-              </Link>
-            </div>
+          <div className="divider my-6">OR</div>
 
-            {/* Submit */}
-            <motion.button
-              whileTap={{ scale: 0.97 }}
-              className="w-full bg-cyan-400 py-2 text-xs font-semibold text-black uppercase
-                         hover:bg-cyan-300 transition"
-            >
-              Continue as {role}
-            </motion.button>
-          </motion.form>
-        </AnimatePresence>
-
-        <div className="h-px bg-slate-800 my-6" />
-
-        <p className="text-[11px] text-slate-400 text-center">
-          Need an account?{" "}
-          <Link href="/auth/registration" className="text-cyan-400 underline">
-            Register
-          </Link>
-        </p>
-        <p className="text-[11px] text-slate-400 text-center">
-          <Link href="/" className="text-cyan-400 underline">
-            Get back to home
-          </Link>
-        </p>
-      </motion.div>
+          <p className="text-center text-sm">
+            Don't have an account?{" "}
+            <Link href="/auth/registration" className="link link-primary font-bold no-underline hover:underline">
+              Register
+            </Link>
+          </p>
+          
+          <div className="text-center mt-2">
+            <Link href="/" className="text-xs text-base-content/50 hover:text-primary transition-colors">
+              ← Back to Home
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
