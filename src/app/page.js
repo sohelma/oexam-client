@@ -7,6 +7,7 @@ import Navbar from "@/components/shared/Navbar/Navbar";
 import Pricing from "@/components/home/Pricing/Pricing";
 import Features from "@/components/home/Feature/Features";
 import Commitment from "@/components/home/Commitment/Commitment";
+import FAQ from "@/components/home/FAQ/FAQ";
 
 export default function Home() {
   return (
@@ -19,7 +20,8 @@ export default function Home() {
         <Services></Services>
         <Pricing />
         <Features />
-        <Commitment/>
+        <FAQ/>
+        <Commitment />
       </main>
       <Footer />
     </div>
