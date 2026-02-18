@@ -1,13 +1,13 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import Logo from "../Logo/Logo";
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import Logo from '../Logo/Logo';
 
 const Navbar = () => {
   const user = {
-    name: "Habiba Sultana",
-    role: "student",
-    image: "https://i.ibb.co.com/MxSXSPf3/kids.jpg",
+    name: 'Habiba Sultana',
+    role: 'student',
+    image: 'https://i.ibb.co.com/MxSXSPf3/kids.jpg',
   };
 
   const navRoutes = [
