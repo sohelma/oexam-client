@@ -9,6 +9,7 @@ import Features from "@/components/home/Feature/Features";
 import Commitment from "@/components/home/Commitment/Commitment";
 import FAQ from "@/components/home/FAQ/FAQ";
 import Testimonials from "@/components/home/Testimonials/Testimonials";
+import Integration from "@/components/home/Integration/Integration";
 
 export default function Home() {
   return (
@@ -17,7 +18,8 @@ export default function Home() {
       <main className="">
         <Hero></Hero>
         <HowItWorks />
-        <About/>
+        <About />
+        <Integration/>
         <Services></Services>
         <Pricing />
         <Testimonials/>

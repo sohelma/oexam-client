@@ -40,7 +40,7 @@ const Integration = () => {
           {/* Right Side: Animated Floating Icons */}
           <div className="relative h-[400px] flex items-center justify-center">
             {/* Center Logo Hub */}
-            <div className="w-24 h-24 rounded-[2rem] bg-white shadow-2xl flex items-center justify-center text-3xl z-20 border border-base-200 animate-pulse">
+            <div className="w-20 h-20 rounded-[2rem] bg-white shadow-2xl flex items-center justify-center text-3xl z-20 border border-primary/20 animate-pulse">
               🚀
             </div>
 
