@@ -101,15 +101,6 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* Brand Logos (Optional Minimalist Footer for Trust) */}
-        <div className="mt-20 pt-10 border-t border-base-200 flex flex-wrap justify-center md:justify-between items-center gap-8 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
-          <span className="font-black text-2xl tracking-tighter">
-            UNIVERSITY OF OXFORD
-          </span>
-          <span className="font-black text-2xl tracking-tighter">STANFORD</span>
-          <span className="font-black text-2xl tracking-tighter">MIT</span>
-          <span className="font-black text-2xl tracking-tighter">HARVARD</span>
-        </div>
       </div>
     </section>
   );
