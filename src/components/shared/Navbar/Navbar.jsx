@@ -67,7 +67,6 @@ const Navbar = () => {
                   </li>
                 ))}
               </div>
-              {/* Version Info Back Again */}
               <div className="mt-4 p-4 bg-gradient-to-br from-primary/5 to-transparent rounded-[1.5rem] text-center">
                 <p className="text-[10px] font-black opacity-40 uppercase tracking-[0.2em]">
                   O-Exam v2.0
@@ -123,7 +122,6 @@ const Navbar = () => {
 
           {user && (
             <div className="flex items-center gap-3 ml-2">
-              {/* User Name & Role - Desktop Only */}
               <div className="hidden xl:flex flex-col items-end leading-none">
                 <p className="text-sm font-black text-base-content">
                   {user.name}
@@ -133,7 +131,6 @@ const Navbar = () => {
                 </span>
               </div>
 
-              {/* Profile Dropdown */}
               <div className="dropdown dropdown-end">
                 <label
                   tabIndex={0}
