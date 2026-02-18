@@ -10,6 +10,7 @@ import Commitment from "@/components/home/Commitment/Commitment";
 import FAQ from "@/components/home/FAQ/FAQ";
 import Testimonials from "@/components/home/Testimonials/Testimonials";
 import Integration from "@/components/home/Integration/Integration";
+import StatsSection from "@/components/home/States/States";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero></Hero>
         <HowItWorks />
         <About />
+        <StatsSection/>
         <Integration/>
         <Services></Services>
         <Pricing />
