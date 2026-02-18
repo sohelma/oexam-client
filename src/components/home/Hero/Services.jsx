@@ -103,7 +103,7 @@ export default function Services() {
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-base-content tracking-tight mb-8">
             Everything You Need for <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+            <span className="text-primary">
               Smart Examinations
             </span>
           </h2>
