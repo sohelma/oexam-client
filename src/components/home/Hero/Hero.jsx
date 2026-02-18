@@ -33,7 +33,7 @@ const Hero = () => {
           <div className="relative">
             <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-all duration-700">
               <img
-                src="https://i.ibb.co.com/ympxYbyn/hero-img.jpg"
+                src="https://i.ibb.co.com/S4Bw6CNW/3718985.jpg"
                 alt="kids studying"
                 className="w-full h-auto object-cover"
               />
