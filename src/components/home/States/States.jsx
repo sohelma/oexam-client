@@ -33,7 +33,7 @@ const StatsSection = () => {
       {/* Background Decorative Element */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-transparent to-transparent pointer-events-none"></div>
 
-      <div className="mx-auto max-w-[98%] md:max-w-[80%] relative z-10">
+      <div className="mx-auto w-full max-w-[1440px] px-4 md:px-10 lg:px-20 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div

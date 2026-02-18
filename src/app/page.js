@@ -17,19 +17,30 @@ export default function Home() {
   return (
     <div className="">
       <Navbar />
-      <main className="mx-auto w-full max-w-[1440px] px-4 md:px-10 lg:px-20">
-        <Hero></Hero>
-        <HowItWorks />
+      <main className="">
+        {/* banner to create first impression */}
+        <Hero />
+
+        {/* why we? */}
+        <Features />
         <About />
-        <NewsletterCTA />
+
+        {/* useing system & service */}
+        <HowItWorks />
+        <Services />
+
+        {/* Trust */}
         <StatsSection />
         <Integration />
-        <Services></Services>
+        <Commitment />
+
+        {/* Decision */}
         <Pricing />
         <Testimonials />
-        <Features />
+
+        {/* support and closing */}
         <FAQ />
-        <Commitment />
+        <NewsletterCTA />
       </main>
       <Footer />
     </div>

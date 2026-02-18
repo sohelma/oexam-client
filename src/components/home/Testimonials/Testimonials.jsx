@@ -30,7 +30,7 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="py-24 bg-base-100 overflow-hidden">
-      <div className="mx-auto max-w-[98%] md:max-w-[80%]">
+      <div className="mx-auto w-full max-w-[1440px] px-4 md:px-10 lg:px-20">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="space-y-4">
@@ -53,7 +53,7 @@ const Testimonials = () => {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="group bg-base-200/30 p-10 rounded-[3rem] border border-transparent hover:border-primary/20 hover:bg-base-200/50 transition-all duration-500 relative"
+              className="group bg-base-200/30 p-10 rounded-3xl border border-transparent hover:border-primary/20 hover:bg-base-200/50 transition-all duration-500 relative"
             >
               {/* Quote Icon */}
               <div className="absolute top-8 right-10 text-6xl font-serif text-primary/10 group-hover:text-primary/20 transition-colors">
@@ -100,7 +100,6 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

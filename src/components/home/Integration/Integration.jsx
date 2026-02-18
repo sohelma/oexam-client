@@ -12,7 +12,7 @@ const Integration = () => {
 
   return (
     <section className="py-24 bg-base-200/30 overflow-hidden">
-      <div className="mx-auto max-w-[98%] md:max-w-[80%]">
+      <div className="mx-auto w-full max-w-[1440px] px-4 md:px-10 lg:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Side: Content */}
           <div className="space-y-8">

@@ -3,26 +3,23 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section
-      id="about"
-      className="py-24 bg-base-100 relative overflow-hidden scroll-mt-20"
-    >
+    <section id="about" className="pt-44 pb-24 relative scroll-mt-20">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full -z-10"></div>
 
-      <div className="mx-auto max-w-[98%] md:max-w-[80%]">
+      <div className="mx-auto w-full max-w-[1440px] px-4 md:px-10 lg:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Side: Visual Experience */}
           <div className="relative">
             {/* Main Image Frame */}
-            <div className="relative z-10 rounded-[3rem] overflow-hidden border-8 border-base-200 shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
+            <div className="relative z-10 rounded-[3rem] overflow-hidden border-8 border-base-800 shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
               <img
                 src="https://i.ibb.co.com/MxSXSPf3/kids.jpg"
                 alt="About O-Exam"
                 className="w-full h-[500px] object-cover"
               />
               {/* Glass Overlay Card */}
-              <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-[2rem] hidden sm:block">
+              <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hidden sm:block">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white text-xl">
                     ✨
@@ -40,7 +37,7 @@ const About = () => {
             </div>
 
             {/* Decorative Floating Stats Card */}
-            <div className="absolute -top-10 -right-6 md:-right-10 z-20 bg-base-100 p-6 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-base-200 hidden md:block animate-bounce-slow">
+            <div className="absolute -top-10 -right-6 md:-right-10 z-20 bg-base-100 p-6 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-base-400 hidden md:block animate-bounce-slow">
               <div className="text-center">
                 <p className="text-4xl font-black text-primary leading-none">
                   99%
@@ -64,9 +61,9 @@ const About = () => {
                 learners.
               </h2>
               <p className="text-lg text-base-content/70 font-medium leading-relaxed">
-                O-Exam isn`&apos;`t just an assessment tool; it`&apos;`s a
-                bridge between ambition and achievement. We`&apos;`ve built an
-                ecosystem where integrity meets innovation.
+                O-Exam isn&apos;t just an assessment tool; it&apos;s a bridge
+                between ambition and achievement. We&apos;ve built an ecosystem
+                where integrity meets innovation.
               </p>
             </div>
 

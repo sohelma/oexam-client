@@ -45,7 +45,7 @@ const Pricing = () => {
 
   return (
     <section className="py-24 bg-[#F8FAFC]">
-      <div className="mx-auto max-w-[98%] md:max-w-[80%]">
+      <div className="mx-auto w-full max-w-[1440px] px-4 md:px-10 lg:px-20">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-black text-[#1E293B] tracking-tight">

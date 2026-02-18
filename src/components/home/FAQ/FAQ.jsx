@@ -29,7 +29,7 @@ const FAQ = () => {
 
   return (
     <section id="faq" className="py-24 bg-base-100 scroll-mt-20">
-      <div className="mx-auto max-w-[98%] md:max-w-[80%]">
+      <div className="mx-auto w-full max-w-[1440px] px-4 md:px-10 lg:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Left Side: Text & Support Card */}
           <div className="lg:col-span-5 space-y-8">
