@@ -1,6 +1,6 @@
-import React from 'react';
+'use client';
 
-const PricingTable = () => {
+const Pricing = () => {
   const plans = [
     {
       name: 'Standard',
@@ -61,7 +61,7 @@ const PricingTable = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-[2rem] p-10 transition-all duration-500 ${
+              className={`relative bg-white rounded-3xl p-10 transition-all duration-500 ${
                 plan.isPopular
                   ? 'border-2 border-[#2D60FF] shadow-[0_20px_50px_rgba(45,96,255,0.2)] scale-105 z-10'
                   : 'border border-slate-200 shadow-sm hover:shadow-md'
@@ -135,4 +135,6 @@ const PricingTable = () => {
   );
 };
 
-export default PricingTable;
+export default Pricing;
+
+

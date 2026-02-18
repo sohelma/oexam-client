@@ -6,6 +6,7 @@ import Footer from "@/components/shared/Footer/Footer";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import Pricing from "@/components/home/Pricing/Pricing";
 import Features from "@/components/home/Feature/Features";
+import Commitment from "@/components/home/Commitment/Commitment";
 
 export default function Home() {
   return (
@@ -17,7 +18,8 @@ export default function Home() {
         <About/>
         <Services></Services>
         <Pricing />
-        <Features/>
+        <Features />
+        <Commitment/>
       </main>
       <Footer />
     </div>
