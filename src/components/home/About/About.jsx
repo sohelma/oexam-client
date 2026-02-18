@@ -14,7 +14,7 @@ const About = () => {
             {/* Main Image Frame */}
             <div className="relative z-10 rounded-[3rem] overflow-hidden border-8 border-base-800 shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
               <img
-                src="https://i.ibb.co.com/MxSXSPf3/kids.jpg"
+                src="https://i.ibb.co.com/pvqQ35x5/of-online-exam-illustration-vector-Photoroom.png"
                 alt="About O-Exam"
                 className="w-full h-[500px] object-cover"
               />
@@ -25,10 +25,10 @@ const About = () => {
                     ✨
                   </div>
                   <div>
-                    <p className="text-white font-black leading-none">
+                    <p className="font-black leading-none">
                       Smart AI Evaluation
                     </p>
-                    <p className="text-white/70 text-xs mt-1 italic font-medium tracking-wide">
+                    <p className="text-black/70 text-xs mt-1 italic font-medium tracking-wide">
                       Next-gen exam integrity system
                     </p>
                   </div>
