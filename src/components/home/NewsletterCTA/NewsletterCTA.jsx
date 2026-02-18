@@ -3,7 +3,7 @@ import React from 'react';
 const NewsletterCTA = () => {
   return (
     <section className="py-20 bg-base-100">
-      <div className="mx-auto max-w-[98%] md:max-w-[80%] px-4">
+      <div className="">
         <div className="relative rounded-[3rem] overflow-hidden bg-[#0A1120] p-8 md:p-16 border border-slate-800 shadow-2xl">
           {/* Background Abstract Glows */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[100px] rounded-full -mr-20 -mt-20"></div>

@@ -17,18 +17,18 @@ export default function Home() {
   return (
     <div className="">
       <Navbar />
-      <main className="">
+      <main className="mx-auto w-full max-w-[1440px] px-4 md:px-10 lg:px-20">
         <Hero></Hero>
         <HowItWorks />
         <About />
-        <NewsletterCTA/>
-        <StatsSection/>
-        <Integration/>
+        <NewsletterCTA />
+        <StatsSection />
+        <Integration />
         <Services></Services>
         <Pricing />
-        <Testimonials/>
+        <Testimonials />
         <Features />
-        <FAQ/>
+        <FAQ />
         <Commitment />
       </main>
       <Footer />
