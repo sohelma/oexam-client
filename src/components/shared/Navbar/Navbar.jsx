@@ -1,20 +1,20 @@
-'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import Logo from '../Logo/Logo';
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import Logo from "../Logo/Logo";
 
 const Navbar = () => {
   const user = {
-    name: 'Habiba Sultana',
-    role: 'student',
-    image: 'https://i.ibb.co.com/MxSXSPf3/kids.jpg',
+    name: "Habiba Sultana",
+    role: "student",
+    image: "https://i.ibb.co.com/MxSXSPf3/kids.jpg",
   };
 
   const navRoutes = [
-    { name: 'Home', href: '/', icon: '🏠' },
-    { name: 'Pricing', href: '#pricing', icon: '💎' },
-    { name: 'How it works', href: '#how-it-works', icon: '⚙️' },
-    { name: 'About', href: '#about', icon: '✨' },
+    { name: "Home", href: "/", icon: "🏠" },
+    { name: "Pricing", href: "#pricing", icon: "💎" },
+    { name: "How it works", href: "#how-it-works", icon: "⚙️" },
+    { name: "About", href: "#about", icon: "✨" },
   ];
 
   return (
@@ -51,7 +51,7 @@ const Navbar = () => {
                 </p>
               </div>
               <div className="space-y-1">
-                {navRoutes.map(item => (
+                {navRoutes.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
@@ -79,7 +79,7 @@ const Navbar = () => {
 
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-2">
-            {navRoutes.map(item => (
+            {navRoutes.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
@@ -216,10 +216,10 @@ const Navbar = () => {
           )}
 
           <Link
-            href={user ? `/dashboard/${user.role}` : '/login'}
+            href={user ? `/${user.role}_dashboard` : "/login"}
             className="btn btn-primary rounded-2xl px-8 hidden md:flex font-black text-white shadow-xl shadow-primary/20 border-none hover:translate-y-[-3px] hover:shadow-primary/40 active:scale-95 transition-all duration-500 uppercase tracking-tighter"
           >
-            {user ? 'Dashboard' : 'Login'}
+            {user ? "Dashboard" : "Login"}
           </Link>
         </div>
       </div>

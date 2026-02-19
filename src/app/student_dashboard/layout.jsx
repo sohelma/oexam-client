@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { act, useState } from "react";
 import Link from "next/link";
 import {
   FaHome,
@@ -13,8 +13,32 @@ import {
   FaBell,
   FaUserCircle,
 } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
-export default function StudentDashboard() {
+// Sub-components
+
+function NavItem({ icon, label, href, collapsed = false }) {
+  const pathName = usePathname();
+  const active = pathName === href;
+
+  return (
+    <Link
+      href={href}
+      className={`flex items-center gap-3 p-3 rounded-lg transition-colors ${
+        active
+          ? "bg-primary text-primary-content hover:bg-primary-focus"
+          : "text-base-content/70 hover:bg-base-200 hover:text-base-content"
+      } ${collapsed ? "justify-center" : ""}`}
+    >
+      {icon}
+      {!collapsed && (
+        <span className="font-medium whitespace-nowrap">{label}</span>
+      )}
+    </Link>
+  );
+}
+
+export default function StudentDashboard({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
@@ -40,32 +64,31 @@ export default function StudentDashboard() {
           <NavItem
             icon={<FaHome size={20} />}
             label="Dashboard"
-            href="/layout/student_dashboard"
-            active
+            href="/student_dashboard"
             collapsed={!sidebarOpen}
           />
           <NavItem
             icon={<FaBook size={20} />}
             label="My Exams"
-            href="/layout/student_dashboard/my_exam"
+            href="/student_dashboard/my_exam"
             collapsed={!sidebarOpen}
           />
           <NavItem
             icon={<FaGraduationCap size={20} />}
             label="Results"
-            href="#"
+            href="/student_dashboard/my_result"
             collapsed={!sidebarOpen}
           />
           <NavItem
             icon={<FaCalendarAlt size={20} />}
             label="Schedule"
-            href="#"
+            href="/student_dashboard/my_schedule"
             collapsed={!sidebarOpen}
           />
           <NavItem
             icon={<FaCog size={20} />}
             label="Settings"
-            href="#"
+            href="/student_dashboard/student_settings"
             collapsed={!sidebarOpen}
           />
         </nav>
@@ -94,9 +117,6 @@ export default function StudentDashboard() {
             <button className="btn btn-ghost btn-sm btn-square text-base-content lg:hidden">
               <FaBars size={18} />
             </button>
-            <h1 className="text-lg font-semibold text-base-content">
-              Dashboard
-            </h1>
           </div>
 
           <div className="flex items-center gap-4">
@@ -134,30 +154,10 @@ export default function StudentDashboard() {
         <main className="p-6">
           {/* Routes/Content will be rendered here */}
           <div className="border-2 border-dashed border-base-300 rounded-xl h-[calc(100vh-10rem)] flex items-center justify-center text-base-content/30">
-            Content Placeholder
+            {children}
           </div>
         </main>
       </div>
     </div>
-  );
-}
-
-// Sub-components
-
-function NavItem({ icon, label, href, active = false, collapsed = false }) {
-  return (
-    <Link
-      href={href}
-      className={`flex items-center gap-3 p-3 rounded-lg transition-colors ${
-        active
-          ? "bg-primary text-primary-content hover:bg-primary-focus"
-          : "text-base-content/70 hover:bg-base-200 hover:text-base-content"
-      } ${collapsed ? "justify-center" : ""}`}
-    >
-      {icon}
-      {!collapsed && (
-        <span className="font-medium whitespace-nowrap">{label}</span>
-      )}
-    </Link>
   );
 }
