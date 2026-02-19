@@ -1,148 +1,150 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
+import { FiMail, FiLock, FiEye, FiEyeOff, FiArrowLeft } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 export default function LoginPage() {
   const [role, setRole] = useState("student");
   const [show, setShow] = useState(false);
-  const [balls, setBalls] = useState([]);
-
-  // generate random positions ONLY on client
-  useEffect(() => {
-    const generated = Array.from({ length: 12 }).map(() => ({
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-    }));
-    setBalls(generated);
-  }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-[#020617] overflow-hidden px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#ece9f6] p-4">
 
-      {/* 🔵 Blue bouncing balls */}
-      {balls.map((ball, i) => (
-        <motion.span
-          key={i}
-          animate={{ y: [0, -20, 0] }}
-          transition={{
-            duration: 2 + i * 0.2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute w-2 h-2 bg-cyan-400/60"
-          style={{
-            top: `${ball.top}%`,
-            left: `${ball.left}%`,
-          }}
-        />
-      ))}
+      {/* ===== Main Card ===== */}
+      <div className="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden
+                      flex flex-col md:grid md:grid-cols-2">
 
-      {/* ⬛ Panel */}
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.25 }}
-        className="relative w-full max-w-sm border border-slate-800 bg-[#0f172a] p-8 shadow-2xl"
-      >
-        <h1 className="text-lg font-semibold text-white">
-          Exam System Login
-        </h1>
-        <p className="text-xs text-slate-400 mt-1 mb-6">
-          Continue as student or teacher.
-        </p>
+        {/* ===== LEFT LOGIN FORM ===== */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="p-8 sm:p-10 md:p-12 flex flex-col justify-center order-2 md:order-1"
+        >
+          <h1 className="text-2xl sm:text-3xl font-semibold text-[#2b4bee] mb-6 sm:mb-8">
+            Login
+          </h1>
 
-        {/* Role switch */}
-        <div className="flex border border-slate-700 mb-6">
-          {["student", "teacher"].map((r) => (
-            <button
-              key={r}
-              onClick={() => setRole(r)}
-              className={`flex-1 py-2 text-xs uppercase transition ${role === r
-                  ? "bg-cyan-400 text-black"
-                  : "text-slate-400 hover:bg-slate-800"
-                }`}
-            >
-              {r}
-            </button>
-          ))}
-        </div>
+          {/* Role switch */}
+          <div className="flex gap-2 sm:gap-3 mb-5 sm:mb-6">
+            {["student", "teacher"].map((r) => (
+              <button
+                key={r}
+                type="button"
+                onClick={() => setRole(r)}
+                className={`px-3 sm:px-4 py-1.5 text-xs rounded-full border transition ${role === r
+                  ? "bg-[#2b4bee] text-white border-[#2b4bee]"
+                  : "text-gray-500 border-gray-300 hover:bg-gray-100"
+                  }`}
+              >
+                {r}
+              </button>
+            ))}
+          </div>
 
-        <AnimatePresence mode="wait">
-          <motion.form
-            key={role}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.15 }}
-            className="space-y-4"
+          {/* FORM */}
+          <form
+            className="space-y-4 sm:space-y-5"
             onSubmit={(e) => {
               e.preventDefault();
               alert(`Login as ${role}`);
             }}
           >
-            {/* Email */}
-            <div className="relative">
-              <FiMail className="absolute left-3 top-3 text-slate-500" />
-              <input
-                type="email"
-                placeholder="Email address"
-                className="w-full border border-slate-700 bg-slate-950 pl-10 pr-3 py-2 text-sm text-white
-                           outline-none focus:border-cyan-400"
-              />
-            </div>
+            <Input icon={<FiMail />} placeholder="E-mail" type="email" />
 
-            {/* Password */}
-            <div className="relative">
-              <FiLock className="absolute left-3 top-3 text-slate-500" />
-              <input
-                type={show ? "text" : "password"}
-                placeholder="Password"
-                className="w-full border border-slate-700 bg-slate-950 pl-10 pr-10 py-2 text-sm text-white
-                           outline-none focus:border-cyan-400"
-              />
+            <PasswordInput show={show} toggle={() => setShow(!show)} />
 
-              <button
-                type="button"
-                onClick={() => setShow(!show)}
-                className="absolute right-3 top-2.5 text-slate-500 hover:text-cyan-400"
-              >
-                {show ? <FiEyeOff size={16} /> : <FiEye size={16} />}
-              </button>
-            </div>
-
-            {/* Forgot */}
-            <div className="flex justify-end">
+            <div className="text-right">
               <Link
                 href="/forgot-password"
-                className="text-[11px] text-slate-400 hover:text-cyan-400"
+                className="text-xs text-gray-500 hover:text-[#2b4bee]"
               >
                 Forgot password?
               </Link>
             </div>
 
-            {/* Submit */}
-            <motion.button
-              whileTap={{ scale: 0.97 }}
-              className="w-full bg-cyan-400 py-2 text-xs font-semibold text-black uppercase
-                         hover:bg-cyan-300 transition"
-            >
+            <button className="w-full bg-[#2b4bee] text-white py-2.5 sm:py-3 rounded-xl font-semibold hover:bg-[#1f36b8] transition">
               Continue as {role}
-            </motion.button>
-          </motion.form>
-        </AnimatePresence>
+            </button>
+          </form>
+        </motion.div>
 
-        <div className="h-px bg-slate-800 my-6" />
+        {/* ===== RIGHT PRIMARY PANEL (VISIBLE ON MOBILE) ===== */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="flex flex-col justify-center items-center text-center
+                     bg-gradient-to-br from-[#2b4bee] to-[#1f36b8] text-white
+                     p-8 sm:p-10 md:p-12
+                     order-1 md:order-2"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-yellow-300">
+            Welcome Back
+          </h2>
 
-        <p className="text-[11px] text-slate-400 text-center">
-          Need an account?{" "}
-          <Link href="/auth/registration" className="text-cyan-400 underline">
+          <p className="text-sm opacity-90 mb-6 sm:mb-8">
+            Don’t have an account?
+          </p>
+
+          <Link
+            href="/auth/registration"
+            className="px-6 sm:px-8 py-2 rounded-full border border-yellow-300
+                       text-yellow-300 hover:bg-yellow-300 hover:text-[#2b4bee] transition"
+          >
             Register
           </Link>
-        </p>
-      </motion.div>
+
+          {/* dots */}
+          <div className="flex gap-3 mt-8 sm:mt-10">
+            <span className="w-3 h-3 rounded-full bg-white/80" />
+            <span className="w-3 h-3 rounded-full border border-white/60" />
+            <span className="w-3 h-3 rounded-full border border-white/60" />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* ===== Back to Home Button ===== */}
+      <Link
+        href="/"
+        className="mt-6 flex items-center gap-2 text-sm text-gray-600 hover:text-[#2b4bee] transition"
+      >
+        <FiArrowLeft />
+        Back to Home
+      </Link>
+    </div>
+  );
+}
+
+/* ---------- INPUTS ---------- */
+
+function Input({ icon, type = "text", placeholder }) {
+  return (
+    <div className="flex items-center border-b border-gray-300 py-2">
+      <span className="text-gray-400 mr-3">{icon}</span>
+      <input
+        type={type}
+        placeholder={placeholder}
+        className="w-full outline-none text-sm placeholder-gray-400"
+      />
+    </div>
+  );
+}
+
+function PasswordInput({ show, toggle }) {
+  return (
+    <div className="flex items-center border-b border-gray-300 py-2">
+      <FiLock className="text-gray-400 mr-3" />
+      <input
+        type={show ? "text" : "password"}
+        placeholder="Password"
+        className="w-full outline-none text-sm placeholder-gray-400"
+      />
+      <button type="button" onClick={toggle} className="text-gray-400">
+        {show ? <FiEyeOff /> : <FiEye />}
+      </button>
     </div>
   );
 }
