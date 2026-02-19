@@ -120,7 +120,7 @@ const Navbar = () => {
             </div>
           </button>
 
-          {user && (
+          {/* {user && (
             <div className="flex items-center gap-3 ml-2">
               <div className="hidden xl:flex flex-col items-end leading-none">
                 <p className="text-sm font-black text-base-content">
@@ -213,13 +213,14 @@ const Navbar = () => {
                 </ul>
               </div>
             </div>
-          )}
+          )} */}
 
           <Link
-            href={user ? `/dashboard/${user.role}` : '/login'}
+            href={'/auth/login'}
             className="btn btn-primary rounded-2xl px-8 hidden md:flex font-black text-white shadow-xl shadow-primary/20 border-none hover:translate-y-[-3px] hover:shadow-primary/40 active:scale-95 transition-all duration-500 uppercase tracking-tighter"
           >
-            {user ? 'Dashboard' : 'Login'}
+            {/* {user ? 'Dashboard' : 'Login'} */}
+            Login
           </Link>
         </div>
       </div>
