@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="">
       <Navbar />
-      <main className="">
+      <main className="overflow-x-hidden">
         {/* banner to create first impression */}
         <Hero />
 

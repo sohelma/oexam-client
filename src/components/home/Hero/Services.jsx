@@ -96,16 +96,14 @@ export default function Services() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full -mr-64 -mt-64"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/5 blur-[120px] rounded-full -ml-64 -mb-64"></div>
 
-      <div className="mx-auto w-full max-w-[1440px] px-6 md:px-10 lg:px-20 relative z-10">
+      <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-20 overflow-hidden relative z-10">
         <div className="text-center mb-24">
           <span className="inline-block px-4 py-1.5 mb-6 text-sm font-black tracking-[0.2em] uppercase bg-primary/10 text-primary rounded-full">
             Core Features
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-base-content tracking-tight mb-8">
             Everything You Need for <br />
-            <span className="text-primary">
-              Smart Examinations
-            </span>
+            <span className="text-primary">Smart Examinations</span>
           </h2>
           <p className="max-w-2xl mx-auto text-xl opacity-60 leading-relaxed font-medium">
             A complete suite of tools designed to streamline the assessment

@@ -19,7 +19,7 @@ const About = () => {
                 className="w-full h-[500px] object-cover"
               />
               {/* Glass Overlay Card */}
-              <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl hidden sm:block">
+              <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white text-xl">
                     ✨
