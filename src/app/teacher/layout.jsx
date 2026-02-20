@@ -18,32 +18,32 @@ const TeacherLayout = ({ children }) => {
     {
       name: 'Dashboard',
       icon: <LuLayoutDashboard />,
-      href: '/teacher_dashboard',
+      href: '/teacher',
     },
     {
       name: 'Question Bank',
       icon: <LuDatabase />,
-      href: '/teacher_dashboard/questions',
+      href: '/teacher/questions',
     },
     {
       name: 'Manage Exams',
       icon: <LuPlus />,
-      href: '/teacher_dashboard/exams',
+      href: '/teacher/exams',
     },
     {
       name: 'Student List',
       icon: <LuUsers />,
-      href: '/teacher_dashboard/students',
+      href: '/teacher/students',
     },
     {
       name: 'Results & Grading',
       icon: <LuChartBar />,
-      href: '/teacher_dashboard/results',
+      href: '/teacher/results',
     },
     {
       name: 'System Settings',
       icon: <LuSettings />,
-      href: '/teacher_dashboard/settings',
+      href: '/teacher/settings',
     },
   ];
 
@@ -52,7 +52,7 @@ const TeacherLayout = ({ children }) => {
       {/* --- Desktop Sidebar --- */}
       <aside className="hidden lg:flex flex-col w-72 bg-white border-r border-slate-200 sticky top-0 h-screen">
         <div className="p-8">
-           <Logo/>
+          <Logo />
         </div>
 
         <nav className="flex-1 px-4 space-y-2 mt-4">
@@ -101,37 +101,33 @@ const TeacherLayout = ({ children }) => {
       </div>
 
       {/* --- Mobile Bottom Navigation --- */}
-      <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-4 py-2 flex justify-between items-center z-[100] shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
-        {menuItems.slice(0, 2).map(item => (
-          <Link
-            key={item.name}
-            href={item.href}
-            className="flex flex-col items-center p-2 text-slate-400"
-          >
-            <span className="text-2xl">{item.icon}</span>
-            <span className="text-[9px] font-bold uppercase mt-1">
-              {item.name.split(' ')[0]}
-            </span>
-          </Link>
-        ))}
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-200 px-4 py-3 flex justify-between items-end z-[100] shadow-[0_-10px_40px_rgba(0,0,0,0.08)]">
+        {/* Left Side: First 2 Items */}
+        <div className="flex justify-around w-[100%] mb-1">
+          {menuItems.map(item => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`flex flex-col items-center transition-all duration-300 ${
+                  isActive ? 'text-primary scale-110' : 'text-slate-400'
+                }`}
+              >
+                <span className="text-2xl mb-1">{item.icon}</span>
+                <span
+                  className={`text-[8px] font-black uppercase tracking-tighter ${isActive ? 'opacity-100' : 'opacity-60'}`}
+                >
+                  {item.name.split(' ')[0]}
+                </span>
+                {isActive && (
+                  <div className="w-1 h-1 bg-primary rounded-full mt-1"></div>
+                )}
+              </Link>
+            );
+          })}
+        </div>
 
-        {/* Mobile Floating Action Button */}
-        <button className="bg-primary text-white p-4 rounded-full shadow-2xl shadow-primary/50 -mt-14 border-8 border-[#F8FAFC] active:scale-90 transition-transform">
-          <LuPlus className="text-2xl" />
-        </button>
-
-        {menuItems.slice(2, 4).map(item => (
-          <Link
-            key={item.name}
-            href={item.href}
-            className="flex flex-col items-center p-2 text-slate-400"
-          >
-            <span className="text-2xl">{item.icon}</span>
-            <span className="text-[9px] font-bold uppercase mt-1">
-              {item.name.split(' ')[0]}
-            </span>
-          </Link>
-        ))}
       </nav>
     </div>
   );
