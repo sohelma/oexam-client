@@ -42,7 +42,7 @@ export default function TeacherPage() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white p-6 md:p-8 rounded-[2.5rem] border border-slate-200/60 shadow-sm">
         <div className="space-y-1">
           <h1 className="text-3xl font-black text-slate-800 tracking-tight">
-            Admin
+            Teacher
           </h1>
           <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">
             Platform Management Engine
@@ -51,7 +51,7 @@ export default function TeacherPage() {
 
         <div className="flex items-center gap-4 self-end md:self-auto">
           <div className="hidden sm:block text-right mr-2">
-            <p className="text-sm font-black text-slate-800">Dr. Robert Fox</p>
+            <p className="text-sm font-black text-slate-800">Habiba</p>
             <span className="text-[9px] font-black text-primary bg-primary/10 px-2.5 py-1 rounded-lg uppercase tracking-wider">
               Pro Tier Educator
             </span>
