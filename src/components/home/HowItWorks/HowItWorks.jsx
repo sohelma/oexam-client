@@ -1,38 +1,38 @@
-import React from 'react';
+import React from "react";
 
 const HowItWorks = () => {
   const steps = [
     {
-      id: '01',
-      title: 'Quick Registration',
-      desc: 'Join our ecosystem as a learner or mentor in seconds.',
-      icon: '🚀',
-      color: '#3b82f6',
-      pos: 'md:mt-0',
+      id: "01",
+      title: "Quick Registration",
+      desc: "Join our ecosystem as a learner or mentor in seconds.",
+      icon: "🚀",
+      color: "#3b82f6",
+      pos: "md:mt-0",
     },
     {
-      id: '02',
-      title: 'Deep Discovery',
-      desc: 'Explore or curate advanced question banks with AI precision.',
-      icon: '🧠',
-      color: '#a855f7',
-      pos: 'md:mt-12',
+      id: "02",
+      title: "Deep Discovery",
+      desc: "Explore or curate advanced question banks with AI precision.",
+      icon: "🧠",
+      color: "#a855f7",
+      pos: "md:mt-12",
     },
     {
-      id: '03',
-      title: 'Live Assessment',
-      desc: 'Engage in a distraction-free, high-integrity exam environment.',
-      icon: '🎯',
-      color: '#f59e0b',
-      pos: 'md:mt-0',
+      id: "03",
+      title: "Live Assessment",
+      desc: "Engage in a distraction-free, high-integrity exam environment.",
+      icon: "🎯",
+      color: "#f59e0b",
+      pos: "md:mt-0",
     },
     {
-      id: '04',
-      title: 'Smart Analytics',
-      desc: 'Unlock deep insights and global rankings instantly.',
-      icon: '📊',
-      color: '#10b981',
-      pos: 'md:mt-12',
+      id: "04",
+      title: "Smart Analytics",
+      desc: "Unlock deep insights and global rankings instantly.",
+      icon: "📊",
+      color: "#10b981",
+      pos: "md:mt-12",
     },
   ];
 
@@ -69,7 +69,7 @@ const HowItWorks = () => {
               {/* Card Container */}
               <div className="h-full bg-base-50 border border-base-400 group-hover:border-primary/50 p-8 rounded-[2.5rem] shadow-[0_0_40px_rgba(0,0,0,0.03)] group-hover:shadow-primary/10 transition-all duration-500 relative overflow-hidden">
                 {/* Step Number Background */}
-                <span className="absolute -right-4 -top-4 text-9xl font-black text-base-content/[0.03] group-hover:text-primary/[0.05] transition-colors duration-500">
+                <span className="absolute right-3 -top-1 text-9xl font-black text-base-content/[0.03] group-hover:text-primary transition-colors duration-500">
                   {step.id}
                 </span>
 
@@ -126,7 +126,7 @@ const HowItWorks = () => {
         {/* Global Footer Note */}
         <div className="mt-24 flex flex-col md:flex-row items-center justify-center gap-6">
           <div className="flex -space-x-4">
-            {[1, 2, 3, 4].map(i => (
+            {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
                 className="w-12 h-12 rounded-full border-4 border-base-100 bg-base-300 overflow-hidden shadow-xl"
