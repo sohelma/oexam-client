@@ -96,7 +96,7 @@ const TeacherLayout = ({ children }) => {
       </div>
 
       {/* --- Mobile Bottom Navigation --- */}
-      <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-4 py-2 flex justify-between items-center z-[100] shadow-[0_-10px_30px_rgba(0,0,0,0.05)] rounded-t-[2.5rem]">
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-4 py-2 flex justify-between items-center z-[100] shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
         {menuItems.slice(0, 2).map(item => (
           <Link
             key={item.name}
