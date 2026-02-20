@@ -21,24 +21,29 @@ const TeacherLayout = ({ children }) => {
       href: '/teacher_dashboard',
     },
     {
-      name: 'User Management',
-      icon: <LuUsers />,
-      href: '/dashboard/teacher/users',
-    },
-    {
       name: 'Question Bank',
       icon: <LuDatabase />,
-      href: '/dashboard/teacher/questions',
+      href: '/teacher_dashboard/questions',
     },
     {
-      name: 'Analytics',
+      name: 'Manage Exams',
+      icon: <LuPlus />,
+      href: '/teacher_dashboard/exams',
+    },
+    {
+      name: 'Student List',
+      icon: <LuUsers />,
+      href: '/teacher_dashboard/students',
+    },
+    {
+      name: 'Results & Grading',
       icon: <LuChartBar />,
-      href: '/dashboard/teacher/analytics',
+      href: '/teacher_dashboard/results',
     },
     {
-      name: 'System Config',
+      name: 'System Settings',
       icon: <LuSettings />,
-      href: '/dashboard/teacher/settings',
+      href: '/teacher_dashboard/settings',
     },
   ];
 
