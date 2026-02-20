@@ -18,7 +18,7 @@ const TeacherLayout = ({ children }) => {
     {
       name: 'Dashboard',
       icon: <LuLayoutDashboard />,
-      href: '/dashboard/teacher',
+      href: '/teacher_dashboard',
     },
     {
       name: 'User Management',

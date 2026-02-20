@@ -1,11 +1,11 @@
 import React from 'react';
 
-const questions = () => {
+const QuestionList = () => {
   return (
     <div>
-      <h2>Question Bank</h2>
+      {/* List of questions */}
     </div>
-  );
+  )
 };
 
-export default questions;
+export default QuestionList;
