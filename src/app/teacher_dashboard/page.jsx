@@ -2,37 +2,44 @@
 import {
   LuPlus,
   LuLogOut,
-  LuCircleArrowRight,
-  LuTrendingUp,
-  LuFolder,
   LuUsers,
+  LuLayoutDashboard,
+  LuDatabase,
+  LuChartBar,
+  LuSettings,
 } from 'react-icons/lu';
 
 export default function TeacherPage() {
-  const stats = [
+  const menuItems = [
     {
-      label: 'LIVE EXAMS',
-      value: '1',
-      icon: <LuCircleArrowRight />,
-      color: 'bg-blue-50 text-blue-500',
+      name: 'Dashboard',
+      icon: <LuLayoutDashboard />,
+      href: '/dashboard/teacher',
     },
     {
-      label: 'AVG PASS RATE',
-      value: '0%',
-      icon: <LuTrendingUp />,
-      color: 'bg-emerald-50 text-emerald-500',
+      name: 'Question Bank',
+      icon: <LuDatabase />,
+      href: '/dashboard/teacher/questions',
     },
     {
-      label: 'QUESTION BANK',
-      value: '2',
-      icon: <LuFolder />,
-      color: 'bg-amber-50 text-amber-500',
+      name: 'Manage Exams',
+      icon: <LuPlus />,
+      href: '/dashboard/teacher/exams',
     },
     {
-      label: 'ACTIVE STUDENTS',
-      value: '142',
+      name: 'Student List',
       icon: <LuUsers />,
-      color: 'bg-indigo-50 text-indigo-500',
+      href: '/dashboard/teacher/students',
+    },
+    {
+      name: 'Results & Grading',
+      icon: <LuChartBar />,
+      href: '/dashboard/teacher/results',
+    },
+    {
+      name: 'System Settings',
+      icon: <LuSettings />,
+      href: '/dashboard/teacher/settings',
     },
   ];
 
@@ -65,29 +72,29 @@ export default function TeacherPage() {
         </div>
       </div>
 
-      {/* Stats Cards Grid */}
+      {/* Menu Items Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-        {stats.map(stat => (
+        {menuItems.map(item => (
           <div
-            key={stat.label}
+            key={item.label}
             className="bg-white p-8 rounded-[2.5rem] border border-slate-200/60 shadow-sm hover:shadow-xl hover:shadow-slate-200/40 transition-all duration-500 group relative overflow-hidden"
           >
             <div className="flex justify-between items-start mb-6 relative z-10">
               <span className="text-[10px] font-black text-slate-400 tracking-[0.15em] uppercase">
-                {stat.label}
+                {item.label}
               </span>
               <span
-                className={`p-3 rounded-2xl ${stat.color} group-hover:scale-110 transition-transform duration-500 text-2xl`}
+                className={`p-3 rounded-2xl ${item.color} group-hover:scale-110 transition-transform duration-500 text-2xl`}
               >
-                {stat.icon}
+                {item.icon}
               </span>
             </div>
             <h2 className="text-5xl font-black text-slate-800 tracking-tighter relative z-10">
-              {stat.value}
+              {item.value}
             </h2>
             {/* Background Subtle Decor */}
             <div
-              className={`absolute -bottom-6 -right-6 w-24 h-24 rounded-full opacity-5 ${stat.color}`}
+              className={`absolute -bottom-6 -right-6 w-24 h-24 rounded-full opacity-5 ${item.color}`}
             ></div>
           </div>
         ))}
