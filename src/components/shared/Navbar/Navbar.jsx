@@ -1,25 +1,24 @@
-'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import Logo from '../Logo/Logo';
+"use client";
+import Link from "next/link";
+import Logo from "../Logo/Logo";
 
 const Navbar = () => {
-  const user = {
-    name: 'Habiba Sultana',
-    role: 'student',
-    image: 'https://i.ibb.co.com/MxSXSPf3/kids.jpg',
-  };
+  // const user = {
+  //   name: "Habiba Sultana",
+  //   role: "student",
+  //   image: "https://i.ibb.co.com/MxSXSPf3/kids.jpg",
+  // };
 
   const navRoutes = [
-    { name: 'Home', href: '/', icon: '🏠' },
-    { name: 'Pricing', href: '#pricing', icon: '💎' },
-    { name: 'How it works', href: '#how-it-works', icon: '⚙️' },
-    { name: 'About', href: '#about', icon: '✨' },
+    { name: "Home", href: "/", icon: "🏠" },
+    { name: "Pricing", href: "#pricing", icon: "💎" },
+    { name: "How it works", href: "#how-it-works", icon: "⚙️" },
+    { name: "About", href: "#about", icon: "✨" },
   ];
 
   return (
     <div className="flex bg-base-100/70 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] w-full justify-center sticky top-0 z-50 pt-2">
-      <div className="navbar max-w-[98%] md:max-w-[80%] min-h-[70px]">
+      <div className="navbar mx-auto w-full max-w-[1440px] px-4 md:px-10 lg:px-20 min-h-[70px]">
         <div className="navbar-start">
           <div className="dropdown">
             <label
@@ -51,7 +50,7 @@ const Navbar = () => {
                 </p>
               </div>
               <div className="space-y-1">
-                {navRoutes.map(item => (
+                {navRoutes.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
@@ -67,7 +66,6 @@ const Navbar = () => {
                   </li>
                 ))}
               </div>
-              {/* Version Info Back Again */}
               <div className="mt-4 p-4 bg-gradient-to-br from-primary/5 to-transparent rounded-[1.5rem] text-center">
                 <p className="text-[10px] font-black opacity-40 uppercase tracking-[0.2em]">
                   O-Exam v2.0
@@ -80,7 +78,7 @@ const Navbar = () => {
 
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-2">
-            {navRoutes.map(item => (
+            {navRoutes.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
@@ -121,9 +119,8 @@ const Navbar = () => {
             </div>
           </button>
 
-          {user && (
+          {/* {user && (
             <div className="flex items-center gap-3 ml-2">
-              {/* User Name & Role - Desktop Only */}
               <div className="hidden xl:flex flex-col items-end leading-none">
                 <p className="text-sm font-black text-base-content">
                   {user.name}
@@ -133,7 +130,6 @@ const Navbar = () => {
                 </span>
               </div>
 
-              {/* Profile Dropdown */}
               <div className="dropdown dropdown-end">
                 <label
                   tabIndex={0}
@@ -216,13 +212,14 @@ const Navbar = () => {
                 </ul>
               </div>
             </div>
-          )}
+          )} */}
 
           <Link
-            href={user ? `/dashboard/${user.role}` : '/login'}
-            className="btn btn-primary rounded-2xl px-8 hidden md:flex font-black text-white shadow-xl shadow-primary/20 border-none hover:translate-y-[-3px] hover:shadow-primary/40 active:scale-95 transition-all duration-500 uppercase tracking-tighter"
+            href={'/auth/login'}
+            className="btn btn-primary rounded-2xl px-8 font-black text-white shadow-xl shadow-primary/20 border-none hover:translate-y-[-3px] hover:shadow-primary/40 active:scale-95 transition-all duration-500 uppercase tracking-tighter"
           >
-            {user ? 'Dashboard' : 'Login'}
+            {/* {user ? 'Dashboard' : 'Login'} */}
+            Login
           </Link>
         </div>
       </div>

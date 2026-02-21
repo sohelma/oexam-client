@@ -3,6 +3,67 @@
 @tailwind utilities;
 @plugin "daisyui";
 
-body{
-  overflow-x: hidden !important;
+@layer utilities {
+    @keyframes terminal-bounce {
+        from {
+            transform: translateY(0);
+        }
+
+        to {
+            transform: translateY(-12px);
+        }
+    }
+
+    @keyframes colorCycle {
+        0% {
+            background: #00f5ff;
+            box-shadow: 0 0 10px #00f5ff;
+        }
+
+        25% {
+            background: #ff00cc;
+            box-shadow: 0 0 12px #ff00cc;
+        }
+
+        50% {
+            background: #00ff88;
+            box-shadow: 0 0 12px #00ff88;
+        }
+
+        75% {
+            background: #ffd700;
+            box-shadow: 0 0 12px #ffd700;
+        }
+
+        100% {
+            background: #00f5ff;
+            box-shadow: 0 0 10px #00f5ff;
+        }
+    }
+
+    @keyframes subtle-pulse {
+        0% {
+            opacity: 0.7;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0.7;
+        }
+    }
+
+    .animate-terminal-bounce {
+        animation: terminal-bounce 0.8s infinite ease-in-out alternate;
+    }
+
+    .animate-color-cycle {
+        animation: colorCycle 3s linear infinite;
+    }
+
+    .animate-subtle-pulse {
+        animation: subtle-pulse 1.5s ease-in-out infinite;
+    }
 }
