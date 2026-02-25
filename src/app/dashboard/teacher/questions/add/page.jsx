@@ -1,11 +1,7 @@
-import React from 'react';
-
-const AddQuestionForm = () => {
+export default function AddQuestionPage() {
   return (
     <div>
-      {/* Add question form */}
+      <h1>Add Question</h1>
     </div>
   );
-};
-
-export default AddQuestionForm;
+}
