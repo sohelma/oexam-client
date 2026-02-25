@@ -1,12 +1,17 @@
 import { Inter } from 'next/font/google';
 import './globals.css';
+import LoadingWrapper from '@/components/shared/LoadingWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} !overflow-x-hidden`}>{children}</body>
+      <body className={`${inter.className} !overflow-x-hidden`}>
+        <LoadingWrapper>
+          {children}
+        </LoadingWrapper>
+      </body>
     </html>
   );
 }
