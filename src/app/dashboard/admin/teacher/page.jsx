@@ -1,0 +1,220 @@
+"use client";
+
+import React, { useState } from "react";
+import {
+  LuSearch,
+  LuEye,
+  LuTrash2,
+  LuUserCheck
+} from "react-icons/lu";
+
+export default function TeacherPage() {
+
+  const [search, setSearch] = useState("");
+
+  const teachers = [
+    {
+      id: 1,
+      name: "Habiba Akter",
+      email: "habiba@gmail.com",
+      institution: "Ideal School",
+      location: "Dhaka",
+      status: "Active",
+    },
+    {
+      id: 2,
+      name: "Tanvir Hasan",
+      email: "tanvir@gmail.com",
+      institution: "Sunrise School",
+      location: "Narayanganj",
+      status: "Inactive",
+    },
+    {
+      id: 3,
+      name: "Sadia Rahman",
+      email: "sadia@gmail.com",
+      institution: "Green Field School",
+      location: "Gazipur",
+      status: "Active",
+    },
+    {
+      id: 4,
+      name: "Mahmud Islam",
+      email: "mahmud@gmail.com",
+      institution: "Scholars School",
+      location: "Dhaka",
+      status: "Active",
+    },
+  ];
+
+
+  const filteredTeachers = teachers.filter(teacher =>
+    teacher.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+
+  return (
+
+    <div className="max-w-[1400px] mx-auto space-y-8 pb-10">
+
+
+      {/* Header */}
+
+      <div className="bg-slate-900 p-8 rounded-[3rem] text-white shadow-xl">
+
+        <div>
+
+          <h1 className="text-3xl font-black">
+            Teacher Management
+          </h1>
+
+          <p className="text-slate-400 text-sm">
+            Manage all registered teachers
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      {/* Search */}
+
+      <div className="bg-white p-6 rounded-3xl shadow-sm border">
+
+        <div className="flex items-center gap-3">
+
+          <LuSearch size={20} />
+
+          <input
+            type="text"
+            placeholder="Search teacher..."
+            className="w-full outline-none"
+            value={search}
+            onChange={(e)=>setSearch(e.target.value)}
+          />
+
+        </div>
+
+      </div>
+
+
+
+      {/* Table */}
+
+      <div className="bg-white rounded-[3rem] border shadow-sm overflow-hidden">
+
+        <div className="p-8 border-b flex items-center gap-3">
+
+          <LuUserCheck size={20} />
+
+          <h2 className="font-black">
+            Teacher List
+          </h2>
+
+        </div>
+
+
+        <div className="overflow-x-auto">
+
+          <table className="w-full">
+
+            <thead>
+
+              <tr className="text-left text-xs uppercase text-gray-400">
+
+                <th className="p-6">Name</th>
+
+                <th>Email</th>
+
+                <th>School</th>
+
+                <th>Location</th>
+
+                <th>Status</th>
+
+                <th className="text-right pr-8">
+                  Actions
+                </th>
+
+              </tr>
+
+            </thead>
+
+
+            <tbody>
+
+              {filteredTeachers.map(teacher => (
+
+                <tr
+                  key={teacher.id}
+                  className="border-t hover:bg-gray-50"
+                >
+
+                  <td className="p-6 font-semibold">
+                    {teacher.name}
+                  </td>
+
+
+                  <td className="text-gray-600">
+                    {teacher.email}
+                  </td>
+
+
+                  <td className="text-gray-600">
+                    {teacher.institution}
+                  </td>
+
+
+                  <td className="text-gray-600">
+                    {teacher.location}
+                  </td>
+
+
+                  <td>
+
+                    <span
+                      className={`px-3 py-1 rounded-lg text-xs font-bold
+                      ${
+                        teacher.status === "Active"
+                        ?
+                        "bg-green-100 text-green-600"
+                        :
+                        "bg-red-100 text-red-600"
+                      }`}
+                    >
+                      {teacher.status}
+                    </span>
+
+                  </td>
+
+
+                  <td className="text-right pr-8 space-x-2">
+
+                    <button className="p-2 bg-blue-50 text-blue-600 rounded-lg">
+                      <LuEye size={18}/>
+                    </button>
+
+
+                    <button className="p-2 bg-red-50 text-red-600 rounded-lg">
+                      <LuTrash2 size={18}/>
+                    </button>
+
+                  </td>
+
+                </tr>
+
+              ))}
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  );
+}
