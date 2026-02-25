@@ -1,51 +1,51 @@
-import React from 'react';
+import React from "react";
 
 const HowItWorks = () => {
   const steps = [
     {
-      id: '01',
-      title: 'Quick Registration',
-      desc: 'Join our ecosystem as a learner or mentor in seconds.',
-      icon: '🚀',
-      color: '#3b82f6',
-      pos: 'md:mt-0',
+      id: "01",
+      title: "Quick Registration",
+      desc: "Join our ecosystem as a learner or mentor in seconds.",
+      icon: "🚀",
+      color: "#3b82f6",
+      pos: "md:mt-0",
     },
     {
-      id: '02',
-      title: 'Deep Discovery',
-      desc: 'Explore or curate advanced question banks with AI precision.',
-      icon: '🧠',
-      color: '#a855f7',
-      pos: 'md:mt-12',
+      id: "02",
+      title: "Deep Discovery",
+      desc: "Explore or curate advanced question banks with AI precision.",
+      icon: "🧠",
+      color: "#a855f7",
+      pos: "md:mt-12",
     },
     {
-      id: '03',
-      title: 'Live Assessment',
-      desc: 'Engage in a distraction-free, high-integrity exam environment.',
-      icon: '🎯',
-      color: '#f59e0b',
-      pos: 'md:mt-0',
+      id: "03",
+      title: "Live Assessment",
+      desc: "Engage in a distraction-free, high-integrity exam environment.",
+      icon: "🎯",
+      color: "#f59e0b",
+      pos: "md:mt-0",
     },
     {
-      id: '04',
-      title: 'Smart Analytics',
-      desc: 'Unlock deep insights and global rankings instantly.',
-      icon: '📊',
-      color: '#10b981',
-      pos: 'md:mt-12',
+      id: "04",
+      title: "Smart Analytics",
+      desc: "Unlock deep insights and global rankings instantly.",
+      icon: "📊",
+      color: "#10b981",
+      pos: "md:mt-12",
     },
   ];
 
   return (
     <section
       id="how-it-works"
-      className="pb-24 bg-base-100 overflow-hidden relative"
+      className="py-20 bg-[#f8fafc] overflow-hidden relative"
     >
       {/* Background Decorative Blobs */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 blur-[120px] rounded-full -translate-x-1/2"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 blur-[150px] rounded-full translate-x-1/2"></div>
 
-      <div className="mx-auto max-w-[98%] md:max-w-[80%] relative z-10">
+      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 md:px-10 lg:px-20">
         {/* Header with Glass Tag */}
         <div className="flex flex-col items-center text-center mb-20">
           <span className="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[11px] font-black uppercase tracking-[0.3em] border border-primary/20 mb-6">
@@ -67,9 +67,9 @@ const HowItWorks = () => {
               className={`relative group ${step.pos} transition-all duration-500`}
             >
               {/* Card Container */}
-              <div className="h-full bg-base-100 border border-base-300 group-hover:border-primary/50 p-8 rounded-[2.5rem] shadow-[0_0_40px_rgba(0,0,0,0.03)] group-hover:shadow-primary/10 transition-all duration-500 relative overflow-hidden">
+              <div className="h-full bg-base-50 border border-base-400 group-hover:border-primary/50 p-8 rounded-[2.5rem] shadow-[0_0_40px_rgba(0,0,0,0.03)] group-hover:shadow-primary/10 transition-all duration-500 relative overflow-hidden">
                 {/* Step Number Background */}
-                <span className="absolute -right-4 -top-4 text-9xl font-black text-base-content/[0.03] group-hover:text-primary/[0.05] transition-colors duration-500">
+                <span className="absolute right-3 -top-1 text-9xl font-black text-base-content/[0.03] group-hover:text-primary transition-colors duration-500">
                   {step.id}
                 </span>
 
@@ -126,7 +126,7 @@ const HowItWorks = () => {
         {/* Global Footer Note */}
         <div className="mt-24 flex flex-col md:flex-row items-center justify-center gap-6">
           <div className="flex -space-x-4">
-            {[1, 2, 3, 4].map(i => (
+            {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
                 className="w-12 h-12 rounded-full border-4 border-base-100 bg-base-300 overflow-hidden shadow-xl"

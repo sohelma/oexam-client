@@ -4,8 +4,8 @@ import Logo from '../Logo/Logo';
 
 const Footer = () => {
   return (
-    <footer className="bg-base-200/50 border-t border-base-150 pt-16 pb-8">
-      <div className="max-w-[98%] md:max-w-[80%] mx-auto px-6">
+    <footer className="bg-[#f8fafc] border-t border-base-150 pt-16 pb-8">
+      <div className="mx-auto w-full max-w-[1440px] px-4 md:px-10 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand & About */}
           <div className="space-y-6">

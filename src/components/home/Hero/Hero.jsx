@@ -5,7 +5,7 @@ const Hero = () => {
         {/* Background Decoration */}
         <div className="absolute top-0 right-0 -z-10 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full"></div>
 
-        <div className="max-w-[98%] md:max-w-[80%] mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="mx-auto w-full max-w-[1440px] px-4 md:px-10 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
             <div className="badge badge-outline badge-primary font-bold py-4 px-6 rounded-full animate-bounce">
@@ -33,7 +33,7 @@ const Hero = () => {
           <div className="relative">
             <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-all duration-700">
               <img
-                src="https://i.ibb.co.com/ympxYbyn/hero-img.jpg"
+                src="https://i.ibb.co.com/S4Bw6CNW/3718985.jpg"
                 alt="kids studying"
                 className="w-full h-auto object-cover"
               />
@@ -46,7 +46,9 @@ const Hero = () => {
                   ✓
                 </div>
                 <div>
-                  <p className="font-black text-md lg:text-xl leading-none">98.5%</p>
+                  <p className="font-black text-md lg:text-xl leading-none">
+                    98.5%
+                  </p>
                   <p className="text-xs opacity-50 uppercase font-bold tracking-widest mt-1">
                     Success Rate
                   </p>
