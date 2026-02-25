@@ -3,11 +3,11 @@
 import React, { useState, useEffect } from 'react';
 
 const LoadingScreen = () => {
-    const [scrambledText, setScrambledText] = useState("OEXAM");
+    const [scrambledText, setScrambledText] = useState("EXAMINERLY");
     const [statusIndex, setStatusIndex] = useState(0);
     const [fadeStatus, setFadeStatus] = useState(false);
 
-    const finalText = "OEXAM";
+    const finalText = "EXAMINERLY";
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%";
     const steps = [
         "Initializing System Modules...",
