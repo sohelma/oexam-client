@@ -14,7 +14,7 @@ export async function POST(req) {
     await connectDB();
 
     const body = await req.json();
-    const { studentId, examId, studentAnswers } = body;
+    const { studentId, examId, studentAnswers, warningsCount = 0, proctoringLogs = [] } = body;
 
     if (!studentId || !examId || !studentAnswers) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
@@ -73,6 +73,8 @@ export async function POST(req) {
       answers: processedAnswers,
       marksObtained: Number(totalObtainedMarks.toFixed(2)), // For our new results API compatibility
       totalMarks: exam.totalMarks || 0,   // Set to actual exam total possible marks
+      warningsCount: Number(warningsCount) || 0,
+      proctoringLogs: Array.isArray(proctoringLogs) ? proctoringLogs : [],
       isVerified: false,
     });
 

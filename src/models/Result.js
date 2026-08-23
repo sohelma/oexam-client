@@ -19,6 +19,14 @@ const resultSchema = new mongoose.Schema({
   ],
   marksObtained: { type: Number, default: 0 },
   totalMarks: { type: Number, default: 0 },
+  warningsCount: { type: Number, default: 0 },
+  proctoringLogs: [
+    {
+      type: { type: String }, // TAB_SWITCH, WINDOW_BLUR, PHONE_DETECTED, FULLSCREEN_EXIT, MULTIPLE_PERSONS, NO_PERSON
+      timestamp: { type: Date, default: Date.now },
+      description: { type: String },
+    }
+  ],
   isVerified: { type: Boolean, default: false }, // Teacher verification
   resultPublished: { type: Boolean, default: true },
   submittedAt: { type: Date, default: Date.now },
